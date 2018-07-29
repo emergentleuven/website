@@ -64,8 +64,13 @@ class LandingPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <ProductSection />
-            <TeamSection />
-            <WorkSection />
+			<div className={classes.section}>
+			 <GridContainer justify="center">
+			   <GridItem xs={12} sm={12} md={8}>
+				 <h2 className={classes.description}>under construction...</h2>
+			   </GridItem>
+			 </GridContainer>
+		    </div>
           </div>
         </div>
         <Footer />
