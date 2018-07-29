@@ -18,6 +18,7 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 
 // Sections for this page
+import IntroSection from "./Sections/IntroSection.jsx";
 import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
@@ -63,14 +64,8 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
+		    <IntroSection />
             <ProductSection />
-			<div className={classes.section}>
-			 <GridContainer justify="center">
-			   <GridItem xs={12} sm={12} md={8}>
-				 <h2 className={classes.description}>under construction...</h2>
-			   </GridItem>
-			 </GridContainer>
-		    </div>
           </div>
         </div>
         <Footer />
