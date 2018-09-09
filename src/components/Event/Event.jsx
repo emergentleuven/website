@@ -11,7 +11,7 @@ import Button from 'components/CustomButtons/Button.jsx';
 import infoStyle from "assets/jss/material-kit-react/components/infoStyle.jsx";
 
 function InfoArea({ ...props }) {
-  const { classes, title, description, fbEvent, vertical } = props;
+  const { classes, title, description, dateString, fbEvent, vertical } = props;
   const iconWrapper = classNames({
     [classes.iconWrapper]: true,
     [classes.iconWrapperVertical]: vertical
@@ -27,6 +27,7 @@ function InfoArea({ ...props }) {
       </div>
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>
+        <h6>{new Date(dateString).toDateString()}</h6>
         <p className={classes.description}>{description}</p>
 		<Button 
 		  color="facebook"
@@ -52,6 +53,7 @@ InfoArea.propTypes = {
   classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  dateString: PropTypes.string.isRequired,
   fbEvent: PropTypes.string,
   vertical: PropTypes.bool
 };
