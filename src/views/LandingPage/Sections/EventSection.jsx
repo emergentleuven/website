@@ -42,6 +42,7 @@ class EventSection extends React.Component {
                 <GridItem xs={12} sm={12} md={6} key={event.eventId}>
                   <Event
                     title={event.title}
+                    id={event.eventId}
                     description={event.description.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) + '...'}
                     dateString={event.startTime}
                     fbEvent={event.facebookLink}
