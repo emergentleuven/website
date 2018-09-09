@@ -14,20 +14,32 @@ class EventSection extends React.Component {
 
     this.state = {
       events: [],
+      isLoading: false,
     };
   }
 
   componentDidMount() {
+    this.setState({isLoading: true});
+
     fetch('https://www.hubler.io/api/v1/event/org/22')
       .then(response => response.json())
       .then(data => {
-        this.setState({events: data});
+        this.setState({events: data, isLoading: false});
         console.log('Fetched events from Hubler API');
       });
   }
 
   render() {
     const {classes} = this.props;
+
+    if (this.state.isLoading) {
+      return (
+        <div className={classes.section}>
+          <p style={{color: '#000'}}>Loading...</p>
+        </div>
+      )
+    }
+
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
